@@ -6,22 +6,26 @@ from django.urls import reverse_lazy, reverse
 from django.shortcuts import render
 
 class WelcomeScreen(TemplateView):
-    pass
+    template_name='welcome.html'
 
 class PlayerList(ListView):
-    pass
+    model = Player
+    template_name='player_list.html'
 
-class PlayerRegister(FormView):
-    pass
+class PlayerRegister(TemplateView):
+    template_name='player_register.html'
 
 class PlayerLogin(TemplateView):
-    pass
+    template_name='player_login.html'
 
 class PlayerDetail(DetailView):
-    pass
+    model = Player
+    template_name='player_detail.html'
 
 class PlayerGameList(ListView):
-    pass
+    model = Player
+    template_name='player_game_list.html'
 
 class GamePlay(TemplateView):
-    pass
+    model = Game
+    template_name='game_play.html'
